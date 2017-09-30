@@ -1,8 +1,21 @@
 * {
   font-family: sans-serif;
-  background-color: teal;
+  font-size: 20px;
+  text-align: center;
 }
-
+body {
+  background-color: rgb(27, 86, 127);
+  background-color: teal;
+ }
 h1 {
-  color: black;
+  background-color: rgb(170, 72, 72); }
+
+h2 {
+    background-color: #ee3e80; }
+
+p {
+    background-color: rgb(199, 228, 249); }
+
+.dogimages {
+  height: 300px;
 }
