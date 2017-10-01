@@ -1,21 +1,35 @@
-* {
-  font-family: sans-serif;
+*
+{
+  font-family: cursive;
   font-size: 20px;
   text-align: center;
 }
-body {
+
+body
+ {
   background-color: rgb(27, 86, 127);
   background-color: teal;
  }
-h1 {
-  background-color: rgb(170, 72, 72); }
 
-h2 {
-    background-color: #ee3e80; }
+h1
+ {
+  background-color: rgb(170, 72, 72);
+}
 
-p {
-    background-color: rgb(199, 228, 249); }
+h2
+{
+    background-color: rgb(199, 228, 249);
+}
 
-.dogimages {
+p
+{
+    background-color: rgb(199, 228, 249);
+
+}
+li {
+  text-align: left;
+}
+.dogimages
+{
   height: 300px;
 }
