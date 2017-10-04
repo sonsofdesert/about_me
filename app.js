@@ -5,18 +5,23 @@ console.log('hello yall');
 alert('Welcome to my About Me page!');
 
 //Question 1
-var user = prompt('We\'re going to play a fun guessing game to get to know me a bit better. What is your name?');
-alert('Hi ' + user + '! Nice to meet you. My name is Eric Cobb and in this game I will ask you 7 fun-fact questions about me!');
+function question1() {
+  var user = prompt('We\'re going to play a fun guessing game to get to know me a bit better. What is your name?');
+  alert('Hi ' + user + '! Nice to meet you. My name is Eric Cobb and in this game I will ask you 7 fun-fact questions about me!');
 
-var answer = prompt('Question 1. Is my favorite food BBQ? Type Yes or No').toLowerCase();
-console.log('First question, user has started with zero points.');
+  var answer = prompt('Question 1. Is my favorite food BBQ? Type Yes or No').toLowerCase();
+  console.log('First question, user has started with zero points.');
 
-if(answer === 'yes' || answer === 'y') {
-  alert('Correct! BBQ is the best! You also earned 1 point!');
-  userPoints++;
-} else {
-  alert('Wrong. I actually love BBQ.');
+  if(answer === 'yes' || answer === 'y') {
+    alert('Correct! BBQ is the best! You also earned 1 point!');
+    userPoints++;
+  } else {
+    alert('Wrong. I actually love BBQ.');
+  }
 }
+
+question1();
+
 //Question 2
 var answer1 = prompt('Question 2. Is my favorite dog breed Black Labs?').toLowerCase();
 console.log('After Question 1, user has ' + userPoints + '!');
