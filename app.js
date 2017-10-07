@@ -1,79 +1,45 @@
 'use strict';
 
-var userPoints = 1;
+var questions = [
+  ['Question 1. Do I like BBQ?', 'yes', 'y'],
+  ['Question 2. Is my favorite dog breed Black Labs?', 'yes', 'y'],
+  ['Question 3. Do I enjoy flying?', 'no', 'n'],
+  ['Question 4. Am I 6\'5in?', 'no', 'n'],
+  ['Last one! Do I like opera movies?', 'no', 'n']
+];
+
+var responses = [
+  ['Correct! BBQ is the best!', 'Wrong. I actually love BBQ.'],
+  ['That\'s correct! I love just about every breed of dog, but black labs are my favorite! You now have point(s)!','Sorry, that\'s wrong. Although I do love most dog breeds, Black Lab is my favorite.'],
+  ['That\'s right. I hate flying. You have earned points so far!', 'No, I\'m sorry that isn\'t correct either. I love to fly!'],
+  ['Correct. I am actually 6\'3\'\'! Now you have points! Keep it up!', 'Incorrect. I am really 6\'3in tall.'],
+  ['Yes! I can\'t stand them! Congratulations!  You\'ve earned', 'Sorry, that is not right. I do enjoy scary movies! But you answered correctly. Thanks for playing!']
+];
+
+var userPoints = 0;
 console.log('hello yall');
 alert('Welcome to my About Me page!');
 
-//Question 1
-function question1() {
+//Questions
+function question() {
   var user = prompt('We\'re going to play a fun guessing game to get to know me a bit better. What is your name?');
+
   alert('Hi ' + user + '! Nice to meet you. My name is Eric Cobb and in this game I will ask you 7 fun-fact questions about me!');
 
-  var answer = prompt('Question 1. Is my favorite food BBQ? Type Yes or No').toLowerCase();
-  console.log('First question, user has started with zero points.');
+  var answer;
+  for (var i = 0; i < questions.length; i++) {
+    answer = prompt(questions[i][0]).toLowerCase();
+    console.log(questions[i][0]);
 
-  if(answer === 'yes' || answer === 'y') {
-    alert('Correct! BBQ is the best! You also earned 1 point!');
-    userPoints++;
-  } else {
-    alert('Wrong. I actually love BBQ.');
+    if(answer === questions[i][1] || answer === questions[i][2]) {
+      userPoints++;
+      alert(responses[i][0] + ' You have ' + userPoints + ' points.');
+    } else {
+      alert(responses[i][1] + ' You have ' + userPoints + ' points.');
+    }
   }
 }
-question1();
-
-//Question 2
-function question2() {
-  var answer1 = prompt('Question 2. Is my favorite dog breed Black Labs?').toLowerCase();
-  console.log('After Question 1, user has ' + userPoints + '!');
-
-  if(answer1 === 'yes' || answer1 === 'y') {
-    alert('That\'s correct! I love just about every breed of dog, but black labs are my favorite! You now have ' + userPoints + ' point(s)! ');
-    userPoints++;
-  } else {
-    alert('Sorry, that\'s wrong. Although I do love most dog breeds, Black Lab is my favorite.');
-  }
-}
-question2();
-
-//Question 3
-function question3() {
-  var answer2 = prompt('Question 3. Do I enjoy flying?').toLowerCase();
-  console.log();
-  if(answer2 === 'no' || answer2 === 'n') {
-    alert('That\'s right. I hate flying. You have earned ' + userPoints + ' points so far!');
-    //userPoints++;
-  } else {
-    alert('No, I\'m sorry that isn\'t correct either. I love to fly!');
-  }
-}
-question3();
-
-//Question 4
-function question4() {
-  var answer3 = prompt('Question 4. Am I 6\'5in?').toLowerCase();
-  console.log(answer3);
-  if(answer3 === 'no' || answer3 === 'n') {
-    alert('Correct. I am actually 6\'3\'\'! Now you have ' + userPoints + ' points! Keep it up!');
-    userPoints++;
-  } else {
-    alert('Incorrect. I am really 6\'3in tall.');
-  }
-}
-question4();
-
-//Question 5
-function question5() {
-  var answer4 = prompt('Last one! Do I like opera movies?').toLowerCase();
-  console.log('user answered and has ' + userPoints + ' so far');
-
-  if(answer4 === 'no' || answer4 === 'n') {
-    alert('Yes! I can\'t stand them! Congratulations!  You\'ve earned ' + userPoints + ' /5!');
-    userPoints++;
-  } else {
-    alert('Sorry, that is not right. I do enjoy scary movies! But you answered ' + userPoints + ' correctly. Thanks for playing!');
-  }
-}
-question5();
+question();
 
 //Question 6 - no more than 4 chances!
 function question6() {
@@ -86,7 +52,7 @@ function question6() {
     guess = parseInt(guess);
     if (guess === correctNum) {
       console.log('Entered if inside for loop.', guess);
-      alert('That\'s correct!! 5 has always been my lucky number.');
+      alert('That\'s correct!! 5 has always been my lucky number.' + ' You have ' + userPoints + ' points.');
       notDone = false;
     } else if (guess > correctNum) {
       console.log('Entered else if guess > inside for loop.', guess);
@@ -113,7 +79,7 @@ function question7() {
       }
     }
     if (flag === true) {
-      alert('You got it right! and you had ' + guesses + ' guesses left! You are too good at this game!');
+      alert('You got it right! and you had ' + guesses + ' guesses left! You are too good at this game!' + ' You have ' + userPoints + ' points.');
     } else {
       guesses--;
       fruitAnswer = prompt('Sorry you got it wrong. Please guess again.');
